@@ -64,7 +64,12 @@ function TaskList({ todos, dispatch, sortAZ, sortPriority, darkMode }) {
           })
           .map((todo) => {
             return (
-              <div key={todo.id} className="tasklist__task">
+              <div
+                key={todo.id}
+                className={
+                  darkMode ? "tasklist__task darkmode" : "tasklist__task"
+                }
+              >
                 <div className="tasklist__details1">
                   {todo.priority === "low" && (
                     <span className="tasklist__priority__low">LOW</span>
@@ -88,7 +93,7 @@ function TaskList({ todos, dispatch, sortAZ, sortPriority, darkMode }) {
                       icon={faCircle}
                       className="tasklist__circle"
                     />
-                    <strong> {todo.value.toUpperCase()} </strong>
+                    <span> {todo.value} </span>
                   </div>
 
                   <div className="tasklist__icons">

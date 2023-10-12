@@ -5,13 +5,9 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 55%;
+  width: 40%;
   font-size: 1.6rem;
   @include btn;
-
-  @media (min-width: 1024px) {
-    width: 40%;
-  }
 }
 
 .addtask {
@@ -20,9 +16,9 @@
   &__form {
     position: absolute;
     top: 20%;
-    left: 10%;
-    right: 10%;
-    bottom: 20%;
+    left: 15%;
+    right: 15%;
+    bottom: 30%;
     min-height: 300px;
     background-color: white;
     border-radius: 10px;
@@ -32,10 +28,10 @@
       border-color: white;
     }
 
-    @media (min-width: 781px) {
-      right: 20%;
-      left: 20%;
-      bottom: 20%;
+    @media (min-width: 768px) {
+      right: 25%;
+      left: 25%;
+      bottom: 30%;
     }
 
     @media (min-width: 1024px) {
@@ -77,7 +73,6 @@
         padding: $spacing / 4 4px;
         border: none;
         border-bottom: 2px solid gray;
-
         &:focus {
           border: none;
           border-bottom: 2px solid rgb(4, 116, 255);
@@ -104,7 +99,7 @@
 
 .addtask__confirm {
   position: fixed;
-  top: 60px;
+  bottom: 60px;
   background-color: rgb(50, 186, 0);
   color: white;
   border-radius: 10px;

@@ -7,9 +7,9 @@
   &__form {
     position: fixed;
     top: 20%;
-    left: 10%;
-    right: 10%;
-    bottom: 20%;
+    left: 15%;
+    right: 15%;
+    bottom: 30%;
     min-height: 300px;
     background-color: white;
     border-radius: 10px;
@@ -20,14 +20,14 @@
       border-color: white;
     }
 
-    @media (min-width: 781px) {
+    @media (min-width: 768px) {
       left: 25%;
       right: 25%;
     }
 
     @media (min-width: 1024px) {
-      left: 30%;
-      right: 30%;
+      left: 25%;
+      right: 25%;
     }
   }
 

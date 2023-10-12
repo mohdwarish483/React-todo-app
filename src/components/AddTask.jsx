@@ -74,7 +74,7 @@ function AddTask({ dispatch, darkMode }) {
                   <option value=""></option>
                   <option value="low">low</option>
                   <option value="medium">medium</option>
-                  <option value="high">high;</option>
+                  <option value="high">high</option>
                 </select>
               </div>
 
@@ -87,6 +87,11 @@ function AddTask({ dispatch, darkMode }) {
                 <input
                   type="datetime-local"
                   value={calendar}
+                  className={
+                    darkMode
+                      ? "addtask__calander__input darkmode"
+                      : "addtask_calender_input"
+                  }
                   onChange={(e) => setCalendar(e.target.value)}
                   required
                 />

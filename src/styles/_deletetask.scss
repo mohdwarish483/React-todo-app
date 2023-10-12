@@ -1,61 +1,77 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
+.deletetask__container {
+  @include bgc_form;
 
-.deletetask__container{
-    @include bgc_form;
+  .deletetask__confirm {
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    background-color: white;
+    padding: 0 $spacing;
+    border-radius: 10px;
 
-    .deletetask__confirm{
-        position: fixed;
-        left: 50%;
-        top: 30%;
-        transform: translate(-50% );
-        background-color: white;
-        border: 2px solid black;
-        padding: 0 $spacing;
-
-        &.darkmode{
-            background-color: black;
-            border-color: white;
-        }
-
-        .deletetask__title{
-            @include formTitle
-        }
-
-        .deletetask__options{
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: $spacing;
-
-            button{
-                padding: 3px 5px;
-                margin: 5px 15px;
-                font-size: 1.6rem;
-                border: none;
-                background-color: transparent;
-                cursor: pointer;
-                width: 80px;
-                border-radius: 5px;
-            }
-
-            .deletetask__yes{
-                border: 2px solid green;
-                background-color: lightgreen;
-
-                &:hover{
-                    background-color: green;
-                }
-            }
-
-            .deletetask__no{
-                border: 2px solid red;
-                background-color: rgb(222, 103, 103);
-
-                &:hover{
-                    background-color: red;
-                }
-            }
-        }
+    &.darkmode {
+      background-color: #292929;
+      border-color: white;
     }
+
+    .deletetask__title {
+      @include formTitle;
+    }
+
+    .deletetask__options {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: $spacing;
+
+      button {
+        padding: 3px 5px;
+        margin: 5px 15px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        width: 80px;
+        line-height: 25px;
+        border-radius: 7px;
+        font-weight: 400;
+        font-size: 16px;
+        box-shadow: 0 4px 14px 0 rgba(4, 16, 251, 0.39);
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        @media (max-width: 768px) {
+          margin: 5px 10px;
+          font-size: 15px;
+          line-height: 20px;
+        }
+        @media (max-width: 375px) {
+          margin: 5px 8px;
+          font-size: 14px;
+          line-height: 18px;
+          padding: 3px 3px;
+          width: 60px;
+        }
+      }
+
+      .deletetask__yes {
+        background-color: rgb(50, 186, 0);
+        color: white;
+        &:hover {
+          background: green;
+          box-shadow: 0 6px 20px rgb(4 116 255/23%);
+        }
+      }
+
+      .deletetask__no {
+        background-color: rgb(255, 68, 0);
+        color: white;
+
+        &:hover {
+          background: rgb(184, 0, 0);
+          box-shadow: 0 6px 20px rgb(4 116 255/23%);
+        }
+      }
+    }
+  }
 }

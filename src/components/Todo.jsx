@@ -53,44 +53,51 @@ function Todo() {
 
   return (
     <>
-      <div className={darkMode ? "todo darkmode" : "todo"}>
-        <h1 className="todo__title"> React Todo App By Warish</h1>
-        <AddTask dispatch={dispatch} darkMode={darkMode} />
-        <h3 className="tasklist__title">
-          <FontAwesomeIcon icon={faListCheck} /> List of active tasks:
-        </h3>
-        <div className="tasklist__container">
-          <TaskList
-            todos={state.activeTasks}
-            dispatch={dispatch}
-            sortAZ={sortAZ}
-            sortPriority={sortPriority}
-            darkMode={darkMode}
-          />
-        </div>
-
-        {state.completedTasks.length >= 1 ? (
-          <h3 className="completedtask__title">
-            <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />{" "}
-            Completed tasks:
+      <div
+        className={darkMode ? "main__container darkmode" : "main__container"}
+      >
+        <div className={darkMode ? "todo darkmode" : "todo"}>
+          <h1 className="todo__title"> React Todo App By Warish</h1>
+          <AddTask dispatch={dispatch} darkMode={darkMode} />
+          <h3 className="tasklist__title">
+            <FontAwesomeIcon icon={faListCheck} /> List of active tasks:
           </h3>
-        ) : null}
-        <div className="completedtask__container">
-          <ol>
-            <CompletedTasks todos={state.completedTasks} />
-          </ol>
-        </div>
-      </div>
+          <div className="tasklist__container">
+            <TaskList
+              todos={state.activeTasks}
+              dispatch={dispatch}
+              sortAZ={sortAZ}
+              sortPriority={sortPriority}
+              darkMode={darkMode}
+            />
+          </div>
 
-      <SortingOptions
-        sortingAZ={sortingAZ}
-        sortingNewest={sortingNewest}
-        sortingPriority={sortingPriority}
-        state={state}
-        dispatch={dispatch}
-        changeMode={changeMode}
-        darkMode={darkMode}
-      />
+          {state.completedTasks.length >= 1 ? (
+            <h3 className="completedtask__title">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                style={{ color: "rgb(50, 186, 0)" }}
+              />{" "}
+              Completed tasks:
+            </h3>
+          ) : null}
+          <div className="completedtask__container">
+            <ol>
+              <CompletedTasks todos={state.completedTasks} />
+            </ol>
+          </div>
+        </div>
+
+        <SortingOptions
+          sortingAZ={sortingAZ}
+          sortingNewest={sortingNewest}
+          sortingPriority={sortingPriority}
+          state={state}
+          dispatch={dispatch}
+          changeMode={changeMode}
+          darkMode={darkMode}
+        />
+      </div>
     </>
   );
 }
