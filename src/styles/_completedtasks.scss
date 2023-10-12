@@ -1,0 +1,34 @@
+@import 'variables';
+@import 'mixins';
+
+.completedtask__title{
+    @include title
+}
+
+.completedtask__container{
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 1.1rem;
+    margin-bottom: 3%;
+
+    @media (min-width: 781px){
+        font-size: 1.25rem;
+    }
+
+    @media (min-width: 1024px){
+        font-size: 1.4rem;
+    }
+
+    .completedtask__task{
+        padding: 10px 0 2px
+    }
+
+    li::marker{
+        font-weight: bold;
+    }
+
+    span{
+        color: rgb(9, 110, 9);
+        font-weight: bold;
+    }
+}

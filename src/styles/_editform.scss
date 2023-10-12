@@ -1,0 +1,94 @@
+@import "variables";
+@import "mixins";
+
+.editform {
+  @include bgc_form;
+
+  &__form {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    bottom: 20%;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+
+    &.darkmode {
+      background-color: #292929;
+      border-color: white;
+    }
+
+    @media (min-width: 781px) {
+      left: 25%;
+      right: 25%;
+    }
+
+    @media (min-width: 1024px) {
+      left: 30%;
+      right: 30%;
+    }
+  }
+
+  .editform__xmark {
+    @include xmark;
+  }
+
+  .editform__title {
+    @include formTitle;
+  }
+
+  .editform__input {
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3%;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    &.darkmode {
+      input {
+        background-color: #292929;
+        color: white;
+        &:focus {
+          border-color: rgb(4, 116, 255);
+        }
+      }
+    }
+
+    label {
+      display: block;
+      text-align: center;
+    }
+
+    input {
+      display: block;
+      padding: $spacing / 4 10px;
+      border: 2px solid gray;
+      border-radius: 6px;
+      width: 80%;
+      margin: 10px auto;
+
+      &:focus {
+        border: 2px solid rgb(4, 116, 255);
+        outline: none;
+      }
+    }
+  }
+
+  .editform__oldvalue {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .editform__btn {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    right: 20%;
+    padding: $spacing / 2 0;
+    @include btn;
+  }
+}

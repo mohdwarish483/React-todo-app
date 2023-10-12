@@ -1,0 +1,58 @@
+@import "variables";
+@import "mixins";
+
+.sorting__container {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  height: 100%;
+  right: -100%;
+  width: 100%;
+  transition: right 0.5s;
+
+  &.darkmode {
+    background-color: black;
+  }
+
+  @media (min-width: 581px) {
+    width: 300px;
+    border-left: 1px solid gray;
+
+    &.darkmode {
+      border-color: white;
+    }
+  }
+
+  &--active {
+    right: 0;
+  }
+
+  .sorting__icon {
+    position: fixed;
+    top: 3%;
+    right: 2%;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  .sorting__title {
+    @include formTitle;
+  }
+
+  .sorting__options-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 80%;
+    justify-content: space-evenly;
+
+    .sorting__option {
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      .sorting__option-icon {
+        font-size: 2rem;
+      }
+    }
+  }
+}
