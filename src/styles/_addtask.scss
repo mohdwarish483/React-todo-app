@@ -85,10 +85,11 @@
         }
       }
     }
-    addtask__calendar input{
-        &.darkmode{
-
-        }
+    .addtask__calendar input {
+      &.darkmode {
+        background-color: #292929;
+        color: white;
+      }
     }
     .addtask__submit {
       position: absolute;

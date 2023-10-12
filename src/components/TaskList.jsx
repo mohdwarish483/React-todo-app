@@ -50,13 +50,7 @@ function TaskList({ todos, dispatch, sortAZ, sortPriority, darkMode }) {
             if (sortAZ) {
               const valueA = a.value.toUpperCase();
               const valueB = b.value.toUpperCase();
-              if (valueA < valueB) {
-                return -1;
-              }
-              if (valueA > valueB) {
-                return 1;
-              }
-              return 0;
+              return valueA.localeCompare(valueB); // Return the comparison result.
             }
             if (sortPriority) {
               const priorityOrder = ["high", "medium", "low"];
@@ -64,14 +58,9 @@ function TaskList({ todos, dispatch, sortAZ, sortPriority, darkMode }) {
               const priorityA = priorityOrder.indexOf(a.priority);
               const priorityB = priorityOrder.indexOf(b.priority);
 
-              if (priorityA < priorityB) {
-                return -1;
-              } else if (priorityA > priorityB) {
-                return 1;
-              } else {
-                return 0;
-              }
+              return priorityA - priorityB; // Return the comparison result.
             }
+            return 0; // Default case.
           })
           .map((todo) => {
             return (
